@@ -28,6 +28,7 @@ const data = [
         question: "A tag semântica indicada para rodapés é a:",
         options: ["div", "main", "section", "footer"],
         answer: "footer",
+        tip:"Alguma dica"
       },
     ],
   },
@@ -44,6 +45,7 @@ const data = [
         question: "Para aumentar a fonte de um elemento utilizamos:",
         options: ["font", "text-transform", "font-size", "hover"],
         answer: "font-size",
+        tip:"Alguma dica"
       },
       {
         question: "A posição que deixa um elemento fixo é a:",

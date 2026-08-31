@@ -10,6 +10,7 @@ const inicialState = {
     currentQuestion: 0,
     answerSelected: false,
     score: 0,
+    help:false,
 
 }
 
@@ -49,7 +50,7 @@ const quizReducer = (state, action) =>{
             const nextQuestion = state.currentQuestion + 1;
             let endGame = false;
 
-            if(!questions[nextQuestion]){
+            if(!state.questions[nextQuestion]){
                 endGame = true;
             }
 
@@ -80,6 +81,12 @@ if(state.answerSelected) return state; // verifica se a resposta foi selecionada
                 answerSelected: option,
 
             };
+
+            case "SHOW_TIP":
+            return{
+                ...state,
+                help: "tip",
+            }
 
 
 
