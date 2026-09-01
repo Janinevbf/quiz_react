@@ -11,6 +11,7 @@ const inicialState = {
     answerSelected: false,
     score: 0,
     help:false,
+    optionToHide: null
 
 }
 
@@ -87,7 +88,24 @@ if(state.answerSelected) return state; // verifica se a resposta foi selecionada
                 ...state,
                 help: "tip",
             }
+        case "REMOVE_OPTION":
+            const questionWithoutOprion = state.questions[state.currentQuestion]
 
+            let repeat = true
+            let optionToHide
+
+            questionWithoutOprion.options.forEach((option) =>{
+                if(option !== questionWithoutOprion.answer && repeat){
+                 optionToHide=option   
+                 repeat=false;
+                }
+            })
+
+            return {
+                ...state,
+                optionToHide,
+                help:true
+            }
 
 
     
